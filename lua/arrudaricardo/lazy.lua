@@ -20,6 +20,16 @@ require("lazy").setup({
     },
 
     {
+        'sQVe/sort.nvim',
+        config = function()
+            require("sort").setup({
+                -- Input configuration here.
+                -- Refer to the configuration section below for options.
+            })
+        end
+    },
+
+    {
         "kylechui/nvim-surround",
         event = "VeryLazy",
     },
