@@ -1,0 +1,13 @@
+-- local wk = require("khich-key")
+
+-- wk.register({
+--   {
+--     xq = { "<cmd>TroubleToggle quickfix<cr>", "Toggle quickfix" }
+--   },
+--   {
+--     prefix = "<leader>x",
+--     mode = "n",
+--     silent = true,
+--     noremap = true
+--   }
+-- })
