@@ -23,7 +23,7 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = ArrudaRicardoGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
@@ -32,8 +32,3 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-
--- augroup highlight_yank
---     autocmd!
---     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
--- augroup END

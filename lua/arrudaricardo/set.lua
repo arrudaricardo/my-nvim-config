@@ -1,5 +1,3 @@
-vim.opt.guicursor = ""
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -36,5 +34,9 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
+
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+
+vim.opt.clipboard = "unnamedplus"
+

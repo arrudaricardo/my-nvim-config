@@ -4,7 +4,7 @@ local ArrudaRicardo_Fugitive = vim.api.nvim_create_augroup("ArrudaRicardo_Fugiti
 
 local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWinEnter", {
-    group = ThePrimeagen_Fugitive,
+    group = ArrudaRicardo_Fugitive,
     pattern = "*",
     callback = function()
         if vim.bo.ft ~= "fugitive" then
