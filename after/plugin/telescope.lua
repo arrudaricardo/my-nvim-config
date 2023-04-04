@@ -18,19 +18,8 @@ require('telescope').setup {
     },
 }
 
--- wk.register({
---     [""] = {
---         name = "Search",
---         f = { function() builtin.find_files() end, "Find All Files" },
---         m = { function() builtin.marks() end, "Marks" },
---         s = { function() builtin.grep_string() end, "Grep String" },
---         l = { function() builtin.live_grep() end, "Live Grep" },
---         b = { function() builtin.buffers() end, "Buffers " },
---         g = { function()
---             builtin.grep_string({ search = vim.fn.input("Grep > ") })
---         end, "Grep" }
---     }
--- })
-
 vim.keymap.set('n', '<C-p>', builtin.git_files, { noremap = true, silent = true, desc = 'Find Git Files'})
-vim.keymap.set('n', '<leader>s', builtin.git_files, {})
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { noremap = true, silent = true, desc = 'Find All Files'})
+vim.keymap.set('n', '<leader>ss', builtin.grep_string, { noremap = true, silent = true, desc = 'Grep String'})
+vim.keymap.set('n', '<leader>sl', builtin.live_grep, { noremap = true, silent = true, desc = 'Live Grep'})
+vim.keymap.set('n', '<leader>sb', builtin.live_grep, { noremap = true, silent = true, desc = 'Buffers'})
