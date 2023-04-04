@@ -1,7 +1,4 @@
-local wk = require("which-key")
-wk.register({
-    ["<leader>e"] = { "<cmd>Neotree toggle<cr>", "Toggle nvim-tree" },
-})
+vim.keymap.set('n', '<leader>e', "<cmd>NeoTreeFloatToggle<cr>", { noremap = true, silent = true, desc = 'Explorer' })
 
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
@@ -19,6 +16,17 @@ vim.fn.sign_define("DiagnosticSignHint",
 -- in the form "LspDiagnosticsSignWarning"
 
 require("neo-tree").setup({
+    event_handlers = {
+
+        {
+            event = "file_opened",
+            handler = function(file_path)
+                --auto close
+                require("neo-tree").close_all()
+            end
+        },
+
+    },
     close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
     popup_border_style = "rounded",
     enable_git_status = true,
@@ -72,8 +80,8 @@ require("neo-tree").setup({
         git_status = {
             symbols = {
                 -- Change type
-                added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-                modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+                added     = "",  -- or "✚", but this is redundant info if you use git_status_colors on the name
+                modified  = "",  -- or "", but this is redundant info if you use git_status_colors on the name
                 deleted   = "✖", -- this can only be used in the git_status source
                 renamed   = "", -- this can only be used in the git_status source
                 -- Status type
@@ -169,9 +177,9 @@ require("neo-tree").setup({
                 --".null-ls_*",
             },
         },
-        follow_current_file = true,           -- This will find and focus the file in the active buffer every
+        follow_current_file = true,             -- This will find and focus the file in the active buffer every
         -- time the current file is changed while the tree is open.
-        group_empty_dirs = false,             -- when true, empty folders will be grouped together
+        group_empty_dirs = false,               -- when true, empty folders will be grouped together
         hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
         -- in whatever position is specified in window.position
         -- "open_current",  -- netrw disabled, opening a directory opens within the
@@ -194,7 +202,7 @@ require("neo-tree").setup({
                 ["]g"] = "next_git_modified",
             },
             fuzzy_finder_mappings = {
-                                  -- define keymaps for filter popup window in fuzzy_finder_mode
+                -- define keymaps for filter popup window in fuzzy_finder_mode
                 ["<down>"] = "move_cursor_down",
                 ["<C-n>"] = "move_cursor_down",
                 ["<up>"] = "move_cursor_up",
@@ -205,7 +213,7 @@ require("neo-tree").setup({
     buffers = {
         follow_current_file = true, -- This will find and focus the file in the active buffer every
         -- time the current file is changed while the tree is open.
-        group_empty_dirs = true,  -- when true, empty folders will be grouped together
+        group_empty_dirs = true,    -- when true, empty folders will be grouped together
         show_unloaded = true,
         window = {
             mappings = {
