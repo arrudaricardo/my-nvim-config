@@ -34,3 +34,5 @@ wk.register({
 })
 
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>f', builtin.git_files, {})
+vim.keymap.set('n', '<leader>F', builtin.live_grep, {})

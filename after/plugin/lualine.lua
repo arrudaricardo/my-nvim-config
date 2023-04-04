@@ -21,5 +21,11 @@ require('lualine').setup {
         lualine_z = {}
     },
     tabline = {},
-    extensions = {}
+    extensions = {
+        'neo-tree',
+        'overseer',
+        'toggleterm',
+        'lazy',
+        'fugitive'
+    }
 }
