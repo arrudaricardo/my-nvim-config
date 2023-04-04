@@ -1,9 +1,1 @@
-local wk = require("which-key")
-
-wk.register({
-  {
-      ["<leader>u]"] = { function() vim.cmd.UndotreeToggle() end, "Undo Tree" }
-  },
-})
-
-
+vim.keymap.set("n", "<leader>u]", ":UndotreeToggle<CR>", { noremap = true, silent = true, desc = "Toggle Undotree" })

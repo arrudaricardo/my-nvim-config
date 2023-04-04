@@ -1,4 +1,3 @@
-local wk       = require("which-key")
 local Terminal = require('toggleterm.terminal').Terminal
 
 local lazygit  = Terminal:new({
@@ -24,9 +23,8 @@ function _lazygit_toggle()
     lazygit:toggle()
 end
 
-wk.register({
-    ["<leader>gg"] = { "<cmd>lua _lazygit_toggle()<cr>", "LazyGit" },
-})
+
+vim.keymap.set('n', '<leader>gg', _lazygit_toggle, { noremap = true, silent = true, desc = 'Toggle Lazygit' })
 
 --
 
