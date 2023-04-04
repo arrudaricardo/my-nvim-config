@@ -25,12 +25,7 @@ require("lazy").setup({
 
     {
         'sQVe/sort.nvim',
-        config = function()
-            require("sort").setup({
-                -- Input configuration here.
-                -- Refer to the configuration section below for options.
-            })
-        end
+        config = true
     },
 
     {
@@ -73,21 +68,11 @@ require("lazy").setup({
     -- quickfix and location list to help you solve all the trouble your code is causing.
     {
         "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup {
-                icons = false,
-            }
-        end
     },
 
     {
         "folke/which-key.nvim",
-        lazy = false,
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup({})
-        end,
+        config = true,
     },
 
     { "nvim-tree/nvim-web-devicons" },
@@ -95,9 +80,6 @@ require("lazy").setup({
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
-        config = function()
-            require("neo-tree").setup()
-        end,
         dependencies = {
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",

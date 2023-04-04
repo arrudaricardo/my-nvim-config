@@ -1,6 +1,6 @@
-require("arrudaricardo.lazy")
 require("arrudaricardo.set")
 require("arrudaricardo.remap")
+require("arrudaricardo.lazy")
 
 local augroup = vim.api.nvim_create_augroup
 local ArrudaRicardoGroup = augroup('ArrudaRicardo', {})

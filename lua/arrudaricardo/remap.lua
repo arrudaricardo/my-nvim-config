@@ -21,7 +21,7 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save File" })
 vim.keymap.set("n", "<leader>W", "<cmd>wa<cr>", { desc = "Save All Files" })
 vim.keymap.set("n", "<leader>c", "<cmd>bw<cr>", { desc = "Close Buffer" })
 
-vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { desc = "Format" })
+vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.format{async = true}<CR>", { desc = "Format" })
 
 vim.keymap.set("n", "<C-H>", "<C-W>h", { desc = "Move to window left" })
 vim.keymap.set("n", "<C-J>", "<C-W>j", { desc = "Move to window below" })
