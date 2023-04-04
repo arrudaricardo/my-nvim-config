@@ -21,6 +21,12 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "H", "<cmd>BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "L", "<cmd>BufferLineCycleNext<CR>")
 
-
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
 vim.keymap.set("n", "<leader>c", "<cmd>bw<cr>")
+
+vim.keymap.set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+
+vim.keymap.set("n", "<C-H>", "<C-W>h")
+vim.keymap.set("n", "<C-J>", "<C-W>j")
+vim.keymap.set("n", "<C-K>", "<C-W>k")
+vim.keymap.set("n", "<C-L>", "<C-W>l")
