@@ -19,6 +19,23 @@ require("lazy").setup({
         dependencies = 'nvim-tree/nvim-web-devicons',
     },
 
+    -- ?? Not working
+    {
+        'nyngwang/murmur.lua', event = "BufReadPost",
+    },
+
+    {
+        'pwntester/octo.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            {'kyazdani42/nvim-web-devicons', name= 'kyazdani42-nvim-web-devicons'}
+        },
+        config = function()
+            require "octo".setup()
+        end
+    },
+
     {
         'lewis6991/gitsigns.nvim',
     },

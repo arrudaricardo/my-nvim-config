@@ -2,6 +2,8 @@ require("arrudaricardo.set")
 require("arrudaricardo.remap")
 require("arrudaricardo.lazy")
 
+
+-- Yank highlight
 local augroup = vim.api.nvim_create_augroup
 local ArrudaRicardoGroup = augroup('ArrudaRicardo', {})
 
@@ -17,11 +19,5 @@ autocmd('TextYankPost', {
             timeout = 40,
         })
     end,
-})
-
-autocmd({ "BufWritePre" }, {
-    group = ArrudaRicardoGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
 })
 
