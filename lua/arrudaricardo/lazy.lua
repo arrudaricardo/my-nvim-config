@@ -13,6 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+
+    {
+        "windwp/nvim-autopairs", config = true --function() require("nvim-autopairs").setup {} end
+    },
+
     {
         'akinsho/bufferline.nvim',
         version = "v3.*",
@@ -142,9 +147,15 @@ require("lazy").setup({
         branch = 'v1.x',
         dependencies = {
             -- LSP Support
-            'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
+            { 'neovim/nvim-lspconfig' },
+            {
+                'williamboman/mason.nvim',
+                build = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
+            { 'williamboman/mason-lspconfig.nvim' },
+
 
             -- Autocompletion
             'hrsh7th/nvim-cmp',
