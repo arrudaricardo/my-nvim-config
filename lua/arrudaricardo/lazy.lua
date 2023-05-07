@@ -15,7 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
     {
-        "windwp/nvim-autopairs", config = true --function() require("nvim-autopairs").setup {} end
+        "windwp/nvim-autopairs", config = true
+    },
+    -- Use treesitter to auto close and auto rename html tag
+    {
+        "windwp/nvim-ts-autotag", config = true
     },
 
     {
