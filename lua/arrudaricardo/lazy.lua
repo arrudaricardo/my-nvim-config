@@ -14,6 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
+    { 'simrat39/rust-tools.nvim' },
+
+    -- Debugging
+    { 'nvim-lua/plenary.nvim' },
+    { 'mfussenegger/nvim-dap' },
+
+
     {
         "windwp/nvim-autopairs", config = true
     },
