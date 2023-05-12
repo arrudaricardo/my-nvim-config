@@ -1,6 +1,10 @@
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
 cmp.setup({
+    view = {
+        entries = { name = 'custom', selection_order = 'near_cursor' } -- can be "custom", "wildmenu" or "native"
+    },
     sources = {
         { name = "path" },
         { name = "nvim_lsp" },
@@ -15,9 +19,17 @@ cmp.setup({
         ["<C-Space>"] = cmp.mapping.complete(),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
         ['<S-Tab>'] = nil,
-    }
+    },
+    window = {
+        completion = {
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+            col_offset = 0,
+            side_padding = 0,
+        },
+    },
 })
 
 vim.diagnostic.config({
     virtual_text = true
 })
+
