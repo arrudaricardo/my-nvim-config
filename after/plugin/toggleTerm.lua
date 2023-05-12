@@ -42,6 +42,6 @@ end
 vim.cmd('autocmd! TermOpen term://*toggleterm#1 lua set_terminal_keymaps()')
 
 --
-vim.keymap.set('n', "<c-\\>", [[<Cmd>:ToggleTerm size=50<CR>]], { noremap = true, silent = true })
-vim.keymap.set('t', "<c-\\>", [[<Cmd>:ToggleTerm size=50<CR>]], { noremap = true, silent = true })
+vim.keymap.set('n', "<c-\\>", [[<Cmd>:ToggleTerm size=35<CR>]], { noremap = true, silent = true })
+vim.keymap.set('t', "<c-\\>", [[<Cmd>:ToggleTerm size=35<CR>]], { noremap = true, silent = true })
 
