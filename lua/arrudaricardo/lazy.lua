@@ -82,7 +82,7 @@ require("lazy").setup({
     },
 
 
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    { 'akinsho/toggleterm.nvim', version = "*" },
 
     -- A task runner and job management plugin for Neovim
     { 'stevearc/overseer.nvim',  config = true },
@@ -181,7 +181,14 @@ require("lazy").setup({
     },
 
     { "folke/zen-mode.nvim" },
-    { "github/copilot.vim" },
     { "eandrju/cellular-automaton.nvim" },
+
+    { "github/copilot.vim" },
+    {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+            require("copilot_cmp").setup()
+        end
+    },
 
 })

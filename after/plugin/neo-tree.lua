@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>e', "<cmd>NeoTreeFloatToggle<cr>", { noremap = true, silent = true, desc = 'Explorer' })
+vim.keymap.set('n', '<leader>e', "<cmd>NeoTreeFloatToggle<cr>", { silent = true, desc = 'Explorer' })
 
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])

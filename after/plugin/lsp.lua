@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lspconfig = require('lspconfig')
 
 -- lsp.preset("recommended")
 
@@ -26,7 +27,18 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 --Fix Undefined global 'vim'
+
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+
+lspconfig.pyright.setup {}
+lspconfig.tsserver.setup {}
+lspconfig.rust_analyzer.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rust-analyzer'] = {},
+  },
+}
+
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
@@ -37,6 +49,4 @@ lsp.set_preferences({
         info = 'I'
     }
 })
-
-lsp.setup()
 
