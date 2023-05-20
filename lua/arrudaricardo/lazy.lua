@@ -67,8 +67,18 @@ require("lazy").setup({
     },
 
     -- Colorshema
+    -- {
+    --     'Mofiqul/dracula.nvim', config = function ()
+    --        vim.cmd[[colorscheme dracula]]
+    --     end
+    -- },
+
     {
-        'Mofiqul/dracula.nvim',
+        "catppuccin/nvim",
+        name = "catppuccin",
+        config = function()
+            vim.cmd [[colorscheme catppuccin-frappe]]
+        end
     },
 
     {
@@ -183,12 +193,20 @@ require("lazy").setup({
     { "folke/zen-mode.nvim" },
     { "eandrju/cellular-automaton.nvim" },
 
-    { "github/copilot.vim" },
-    {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-            require("copilot_cmp").setup()
-        end
-    },
+    -- {
+    --     "github/copilot.vim",
+    --     config = function()
+    --         require("copilot").setup({
+    --             suggestion = { enabled = false },
+    --             panel = { enabled = false },
+    --         })
+    --     end
+    -- },
+    -- {
+    --     "zbirenbaum/copilot-cmp",
+    --     config = function()
+    --         require("copilot_cmp").setup()
+    --     end
+    -- }
 
 })
